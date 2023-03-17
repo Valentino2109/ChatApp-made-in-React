@@ -1,0 +1,22 @@
+.chat-input {
+  width: 40%;
+  height: 82%;
+  margin-top: 0;
+  margin-right: 0.3rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem 0.5rem 0.5rem 0.8rem;
+  border: none;
+}
+.chat-button {
+  margin-right: 0.5rem;
+  width: 3rem;
+  height: 82%;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: rgb(248, 150, 223);
+  font-size: 0.7rem;
+  font-weight: bold;
+}

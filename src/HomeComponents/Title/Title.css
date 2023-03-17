@@ -1,0 +1,20 @@
+#title-main {
+  text-align: center;
+}
+#title-main h1 {
+  font-size: 5rem;
+  letter-spacing: 0.4rem;
+  color: white;
+  animation: bounce 1.2s linear;
+}
+
+/* Text animation */
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

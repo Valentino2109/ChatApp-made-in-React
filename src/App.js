@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import ChatUI from "./UIComponents/ChatUI";
+import HomeComponent from "./HomeComponents/HomeComponents";
 
+// CSS import
+import "./App.css";
+
+// React router
+import { Route, Routes } from "react-router-dom";
+
+// Main function for displaying the Chat
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="intro hide-intro">
+      <Routes>
+        <Route path="/" element={<HomeComponent />} />
+        <Route path="/chatui" element={<ChatUI />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
+// "homepage": "https://Valentino2109.github.io/ChatApp-in-React", dodati prilikom npm run build ispod private

@@ -1,0 +1,82 @@
+#container {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  height: 24rem;
+  background-color: transparent;
+  opacity: 0;
+  border-left: solid 0.2rem white;
+  border-right: solid 0.2rem white;
+  border-radius: 1rem;
+  animation: fade 1s linear;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+#container h2 {
+  font-size: 2.8rem;
+  margin: 3rem;
+  color: white;
+}
+#container #inputbox {
+  position: relative;
+  border-bottom: solid 0.1rem white;
+  width: 80%;
+  text-align: bottom;
+}
+#container #inputbox input {
+  width: 100%;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+#container #inputbox label {
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+  pointer-events: none;
+  color: white;
+  transition: 0.5s;
+}
+#container button {
+  margin-top: 3.5rem;
+  width: 80%;
+  height: 1.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 40rem;
+  background: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#container h6 {
+  position: absolute;
+  bottom: 3%;
+  color: white;
+}
+
+/* Effects */
+input:focus ~ label,
+input:valid ~ label {
+  margin-top: -1.2rem;
+  opacity: 0.4;
+}
+button:hover {
+  scale: 1.1;
+}
+
+/* Animations */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
