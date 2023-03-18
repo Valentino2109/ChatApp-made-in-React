@@ -14,14 +14,16 @@ export default function MainLogin() {
 
   // Clicking on the button sends you to ChatUI
   const navigate = useNavigate();
-  const handleEnterChat = () => {
+  const handleSubmit = (e) => {
     navigate("/chatui");
+    setNickname(e.target.value);
   };
 
   // Log In with Enter key
   const handleEnter = (e) => {
     if (e.key === "Enter") {
-      handleEnterChat();
+      handleSubmit();
+      setNickname(e.target.value);
     }
   };
 
@@ -38,7 +40,7 @@ export default function MainLogin() {
         />
         <label>Enter your name</label>
       </div>
-      <button onClick={handleEnterChat}>Log in</button>
+      <button onClick={handleSubmit}>Log in</button>
       <h6>Created by Valentino</h6>
     </div>
   );

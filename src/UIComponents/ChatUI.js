@@ -14,9 +14,6 @@ export default function ChatUI() {
     setDrone(new window.Scaledrone("fbEWYCxtwTPuUsqf"));
   }, [drone, setDrone]);
 
-  const [messages, setMessages] = useState([]);
-  const [member, setMember] = useState("");
-
   return (
     <div id="chat-UI">
       <div className="top-UI">ChatApp</div>

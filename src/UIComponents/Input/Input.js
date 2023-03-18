@@ -5,9 +5,21 @@ import { useState } from "react";
 import "./Input.css";
 
 export default function Input() {
-  const [text, setText] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleChange = () => {};
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setMessage("");
+  };
+
+  const handleClick = (e) => {
+    setMessage("");
+  };
 
   return (
     <div>
@@ -15,9 +27,12 @@ export default function Input() {
         className="chat-input"
         type="text"
         placeholder="Message..."
-        onChange={handleChange}
+        onKeyUp={handleEnter}
+        onChange={handleInputChange}
       />
-      <button className="chat-button">SEND</button>
+      <button className="chat-button" onClick={handleClick}>
+        SEND
+      </button>
     </div>
   );
 }
