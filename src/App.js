@@ -10,7 +10,7 @@ import { Route, Routes } from "react-router-dom";
 // Main function for displaying the Chat
 function App() {
   return (
-    <div className="intro hide-intro">
+    <div className="intro">
       <Routes>
         <Route path="/" element={<HomeComponent />} />
         <Route path="/chatui" element={<ChatUI />} />
@@ -20,4 +20,3 @@ function App() {
 }
 
 export default App;
-// "homepage": "https://Valentino2109.github.io/ChatApp-in-React", dodati prilikom npm run build ispod private
