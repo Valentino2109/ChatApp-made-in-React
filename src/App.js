@@ -1,5 +1,6 @@
 import ChatUI from "./UIComponents/ChatUI";
 import HomeComponent from "./HomeComponents/HomeComponents";
+import React from "react";
 
 // CSS import
 import "./App.css";

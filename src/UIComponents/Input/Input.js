@@ -1,26 +1,26 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // CSS input
 import "./Input.css";
 
 export default function Input() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState();
 
   const handleEnter = (e) => {
     if (e.key === "Enter") {
       handleClick();
+      setMessage();
     }
   };
 
   const handleInputChange = (e) => {
-    setMessage("");
+    setMessage(e.target.value);
   };
 
   const handleClick = (e) => {
-    setMessage("");
+    setMessage(e.target.value);
   };
-
+  console.log(setMessage);
   return (
     <div>
       <input

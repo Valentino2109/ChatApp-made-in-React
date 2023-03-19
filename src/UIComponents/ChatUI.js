@@ -1,7 +1,6 @@
 import Input from "./Input/Input";
 import Messages from "./Messages/Messages";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 // CSS
 import "./ChatUI.css";
@@ -14,6 +13,17 @@ export default function ChatUI() {
     setDrone(new window.Scaledrone("fbEWYCxtwTPuUsqf"));
   }, [drone, setDrone]);
 
+  // Sending a message
+  const handleSendMessage = useCallback(
+    (message) => {
+      drone.publish({
+        room: "observable-room",
+        message,
+      });
+    },
+    [drone]
+  );
+
   return (
     <div id="chat-UI">
       <div className="top-UI">ChatApp</div>
@@ -21,7 +31,7 @@ export default function ChatUI() {
         <Messages />
       </div>
       <div className="input-UI">
-        <Input />
+        <Input sendMessage={handleSendMessage} />
       </div>
     </div>
   );
