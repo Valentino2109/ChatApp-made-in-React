@@ -12,14 +12,14 @@ export default function MainLogin() {
     setNickname(e.target.value);
   };
 
-  // Clicking on the button sends you to ChatUI
+  // Clicking on the button sends you to ChatUI && if input is empty, send alert
   const navigate = useNavigate();
   const handleSubmit = () => {
-    if (!nickname) {
+    if (nickname.trim() === "") {
+      alert("Please enter your name!");
       return;
-    } else {
-      return navigate("/chatui");
     }
+    return navigate("/chatui");
   };
 
   // Log In with Enter key

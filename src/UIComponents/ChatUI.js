@@ -1,11 +1,12 @@
 import Input from "./Input/Input";
 import Messages from "./Messages/Messages";
+import MainLogin from "../HomeComponents/MainLogIn/MainLogIn";
 import { useState, useEffect, useCallback } from "react";
 
 // CSS
 import "./ChatUI.css";
 
-export default function ChatUI() {
+export default function ChatUI({ nickname }) {
   // Connecting to Scaledrone
   const [drone, setDrone] = useState(null);
   useEffect(() => {
