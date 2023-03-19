@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
 // CSS input
 import "./Input.css";
 
 export default function Input() {
+  const [message, setMessage] = useState();
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      handleInputChange();
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setMessage(e.target.value);
+  };
+
   return (
     <div>
-      <input className="chat-input" type="text" placeholder="Message..." />
-      <button className="chat-button">SEND</button>
+      <input
+        className="chat-input"
+        type="text"
+        placeholder="Message..."
+        onKeyUp={handleEnter}
+        onChange={handleInputChange}
+      />
+      <button className="chat-button" onClick={handleInputChange}>
+        SEND
+      </button>
     </div>
   );
 }

@@ -26,7 +26,7 @@
   width: 80%;
   text-align: bottom;
 }
-#container #inputbox input {
+#container #inputbox .login-input {
   width: 100%;
   font-size: 1.2rem;
   background: transparent;
@@ -42,7 +42,7 @@
   color: white;
   transition: 0.5s;
 }
-#container button {
+#container .login-button {
   margin-top: 3.5rem;
   width: 80%;
   height: 1.8rem;
@@ -67,7 +67,7 @@ input:valid ~ label {
   margin-top: -1.2rem;
   opacity: 0.4;
 }
-button:hover {
+.login-button:hover {
   scale: 1.1;
 }
 

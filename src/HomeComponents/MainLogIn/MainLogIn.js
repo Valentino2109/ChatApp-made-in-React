@@ -33,6 +33,7 @@ export default function MainLogin() {
       <h2>Login</h2>
       <div id="inputbox">
         <input
+          className="login-input"
           type="text"
           onChange={handleNickname}
           onKeyUp={handleEnter}
@@ -41,7 +42,9 @@ export default function MainLogin() {
         />
         <label>Enter your name</label>
       </div>
-      <button onClick={handleSubmit}>Log in</button>
+      <button className="login-button" onClick={handleSubmit}>
+        Log in
+      </button>
       <h6>Created by Valentino</h6>
     </div>
   );

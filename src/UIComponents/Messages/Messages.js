@@ -1,10 +1,10 @@
 // CSS import
 import "./Messages.css";
 
-export default function Messages({ nickname }) {
+export default function Messages() {
   return (
     <>
-      <p className="text-message">{nickname}</p>
+      <p className="text-message">Hi</p>
     </>
   );
 }

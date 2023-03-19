@@ -1,4 +1,6 @@
 #chat-UI {
+  margin: 0;
+  padding: 0;
   position: relative;
   display: flex;
   bottom: 100rem;
