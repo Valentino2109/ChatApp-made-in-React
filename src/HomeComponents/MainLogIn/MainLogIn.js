@@ -16,8 +16,7 @@ export default function MainLogin() {
   const navigate = useNavigate();
   const handleSubmit = () => {
     if (nickname.trim() === "") {
-      alert("Please enter your name!");
-      return;
+      return alert("Please enter your name!");
     }
     return navigate("/chatui");
   };

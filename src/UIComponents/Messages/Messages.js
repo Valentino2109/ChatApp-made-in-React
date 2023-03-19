@@ -1,6 +1,3 @@
-import Input from "../Input/Input";
-import MainLogin from "../../HomeComponents/MainLogIn/MainLogIn";
-
 // CSS import
 import "./Messages.css";
 
