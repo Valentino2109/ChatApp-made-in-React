@@ -14,16 +14,18 @@ export default function MainLogin() {
 
   // Clicking on the button sends you to ChatUI
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    navigate("/chatui");
-    setNickname(e.target.value);
+  const handleSubmit = () => {
+    if (!nickname) {
+      return;
+    } else {
+      return navigate("/chatui");
+    }
   };
 
   // Log In with Enter key
   const handleEnter = (e) => {
     if (e.key === "Enter") {
       handleSubmit();
-      setNickname(e.target.value);
     }
   };
 

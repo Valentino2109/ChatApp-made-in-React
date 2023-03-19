@@ -20,7 +20,7 @@ export default function Input() {
   const handleClick = (e) => {
     setMessage(e.target.value);
   };
-  console.log(setMessage);
+
   return (
     <div>
       <input
