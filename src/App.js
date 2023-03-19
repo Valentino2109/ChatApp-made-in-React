@@ -1,15 +1,14 @@
 import ChatUI from "./UIComponents/ChatUI";
 import HomeComponent from "./HomeComponents/HomeComponents";
 import React from "react";
+// React router
+import { Route, Routes } from "react-router-dom";
 
 // CSS import
 import "./App.css";
 
-// React router
-import { Route, Routes } from "react-router-dom";
-
 // Main function for displaying the Chat
-function App() {
+export default function App() {
   return (
     <div className="intro">
       <Routes>
@@ -19,5 +18,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

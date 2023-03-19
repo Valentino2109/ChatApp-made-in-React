@@ -1,37 +1,61 @@
 import Input from "./Input/Input";
 import Messages from "./Messages/Messages";
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 
 // CSS
 import "./ChatUI.css";
 
-export default function ChatUI() {
-  // Connecting to Scaledrone
-  const [drone, setDrone] = useState(null);
-  useEffect(() => {
-    if (drone !== null) return;
-    setDrone(new window.Scaledrone("fbEWYCxtwTPuUsqf"));
-  }, [drone, setDrone]);
+// Random name
+const aName = () => {
+  return "Small wiener";
+};
 
-  // Sending a message
-  const handleSendMessage = useCallback(
-    (message) => {
-      drone.publish({
-        room: "observable-room",
-        message,
-      });
-    },
-    [drone]
-  );
+// Random color for a member
+const randomColor = () => {
+  return "#" + Math.floor(Math.random() * 0xffffff).toString(16);
+};
+
+export default function ChatUI() {
+  const [messages, setMessages] = useState([]);
+  const [member, setMember] = useState({
+    username: aName(),
+    color: randomColor(),
+  });
+
+  // Connecting to Scaledrone
+  const drone = new window.Scaledrone("fbEWYCxtwTPuUsqf", {
+    data: member,
+  });
+  drone.on("open", (error) => {
+    if (error) {
+      return console.error(error);
+    }
+    member.id = drone.clientId;
+    setMember(member);
+  });
+  const room = drone.subscribe("observable-chat");
+  room.on("data", (data, member) => {
+    const newMessages = [...messages];
+    newMessages.push({ member, text: data });
+    setMessages(newMessages);
+  });
+
+  // Sending a message through observable-room
+  const handleSendMessage = (message) => {
+    drone.publish({
+      room: "observable-chat",
+      message,
+    });
+  };
 
   return (
     <div id="chat-UI">
       <div className="top-UI">ChatApp</div>
       <div className="messages-UI">
-        <Messages />
+        <Messages messages={messages} currentMember={member} />
       </div>
       <div className="input-UI">
-        <Input sendMessage={handleSendMessage} />
+        <Input handleSendMessage={handleSendMessage} />
       </div>
     </div>
   );

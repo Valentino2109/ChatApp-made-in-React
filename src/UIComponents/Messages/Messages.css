@@ -1,5 +1,8 @@
-.text-message {
-  width: 100%;
+.main-member {
   height: 4%;
   text-align: end;
+}
+.other-member {
+  height: 4%;
+  text-align: start;
 }
