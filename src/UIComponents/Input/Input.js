@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 // CSS input
 import "./Input.css";
 
 export default function Input() {
-  const [message, setMessage] = useState();
-
   const handleEnter = (e) => {
     if (e.key === "Enter") {
       handleClick();
