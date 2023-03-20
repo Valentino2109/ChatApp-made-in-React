@@ -2,7 +2,18 @@
   height: 4%;
   text-align: end;
 }
+.main-member span {
+  color: rgb(247, 151, 25);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 .other-member {
   height: 4%;
   text-align: start;
+}
+.other-member span {
+  color: rgb(10, 185, 4);
+  font-size: 0.8rem;
+  font-style: italic;
 }

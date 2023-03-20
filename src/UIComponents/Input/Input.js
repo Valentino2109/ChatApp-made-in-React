@@ -8,7 +8,7 @@ export default function Input({ handleSendMessage }) {
 
   const handleEnter = (e) => {
     if (e.key === "Enter") {
-      handleInputChange();
+      handleButtonSend();
     }
   };
 
@@ -18,7 +18,7 @@ export default function Input({ handleSendMessage }) {
 
   const handleButtonSend = (e) => {
     handleSendMessage(text);
-    setText("");
+    setText(e.target.value);
   };
 
   return (
