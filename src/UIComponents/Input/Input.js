@@ -17,8 +17,11 @@ export default function Input({ handleSendMessage }) {
   };
 
   const handleButtonSend = (e) => {
+    if (!text.length > 0) {
+      return;
+    }
     handleSendMessage(text);
-    setText(e.target.value);
+    setText("");
   };
 
   return (
@@ -28,10 +31,10 @@ export default function Input({ handleSendMessage }) {
         value={text}
         type="text"
         placeholder="Message..."
-        onKeyUp={handleEnter}
-        onChange={handleInputChange}
+        onKeyUp={(e) => handleEnter(e)}
+        onChange={(e) => handleInputChange(e)}
       />
-      <button className="chat-button" onClick={handleButtonSend}>
+      <button className="chat-button" onClick={(e) => handleButtonSend(e)}>
         SEND
       </button>
     </div>
