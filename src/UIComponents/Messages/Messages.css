@@ -1,19 +1,21 @@
 .main-member {
-  height: 4%;
   text-align: end;
+  margin-right: 0.8rem;
+  list-style-type: none;
 }
 .main-member span {
-  color: rgb(247, 151, 25);
+  color: orange !important;
+  font-weight: bold;
   font-size: 0.8rem;
   font-style: italic;
 }
 
 .other-member {
-  height: 4%;
   text-align: start;
+  margin-left: 0.8rem;
+  list-style-type: none;
 }
 .other-member span {
-  color: rgb(10, 185, 4);
   font-size: 0.8rem;
   font-style: italic;
 }

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 // CSS import
 import "./MainLogIn.css";
@@ -18,7 +18,11 @@ export default function MainLogin() {
     if (nickname.trim() === "") {
       return alert("Please enter your name!");
     }
-    return navigate("/chatui");
+    return navigate("/chatui", {
+      state: {
+        nickname,
+      },
+    });
   };
 
   // Log In with Enter key

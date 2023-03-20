@@ -1,12 +1,13 @@
 import Input from "./Input/Input";
 import Messages from "./Messages/Messages";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 // CSS
 import "./ChatUI.css";
 
 // Random name
-const aName = () => {
+const defaultName = () => {
   return "Small wiener";
 };
 
@@ -16,10 +17,13 @@ const randomColor = () => {
 };
 
 export default function ChatUI() {
+  // Getting username to show up as a member name
+  const location = useLocation();
+
   const [messages, setMessages] = useState([]);
   const [drone, setDrone] = useState();
   const [member, setMember] = useState({
-    username: aName(),
+    username: location.state.nickname ?? defaultName(),
     color: randomColor(),
   });
 
