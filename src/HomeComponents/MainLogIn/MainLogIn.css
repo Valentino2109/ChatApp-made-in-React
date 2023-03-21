@@ -28,7 +28,7 @@
 }
 #container #inputbox .login-input {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background: transparent;
   border: none;
   outline: none;
@@ -64,7 +64,7 @@
 /* Effects */
 input:focus ~ label,
 input:valid ~ label {
-  margin-top: -1.2rem;
+  margin-top: -1.4rem;
   opacity: 0.4;
 }
 .login-button:hover {

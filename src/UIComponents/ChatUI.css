@@ -34,14 +34,16 @@
   background-color: white;
   opacity: 0.8;
   overflow: auto;
+  /* Wraps long words in a new row */
   word-wrap: break-word;
 }
+
 /* Removes scrollbar width */
 ::-webkit-scrollbar {
   display: none;
 }
+
 #chat-UI .input-UI {
-  position: relative;
   text-align: end;
   width: 100%;
   height: 5%;
