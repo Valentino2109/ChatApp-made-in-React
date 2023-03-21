@@ -7,14 +7,14 @@ export default function Messages({ messages, currentMember }) {
     const myMessage = member.id === currentMember.id;
     const className = myMessage ? "main-member" : "other-member";
     return (
-      <div>
+      <>
         <li className={className}>
           <span style={{ color: member.clientData.color }}>
             <div>{member.clientData.username}</div>
           </span>
           <div>{text}</div>
         </li>
-      </div>
+      </>
     );
   };
 

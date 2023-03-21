@@ -3,6 +3,7 @@
   margin-right: 0.8rem;
   list-style-type: none;
   margin-bottom: 0.5rem;
+  padding-left: 2%;
 }
 .main-member span {
   color: orange !important;
@@ -15,6 +16,7 @@
   margin-left: 0.8rem;
   list-style-type: none;
   margin-bottom: 0.5rem;
+  padding-right: 2%;
 }
 .other-member span {
   font-weight: bold;
