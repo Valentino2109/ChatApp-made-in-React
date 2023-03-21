@@ -1,15 +1,10 @@
 import Input from "./Input/Input";
 import Messages from "./Messages/Messages";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 // CSS
 import "./ChatUI.css";
-
-// Random name
-const defaultName = () => {
-  return "Small wiener";
-};
 
 // Random color for a member
 const randomColor = () => {
@@ -23,9 +18,15 @@ export default function ChatUI() {
   const [messages, setMessages] = useState([]);
   const [drone, setDrone] = useState();
   const [member, setMember] = useState({
-    username: location.state.nickname ?? defaultName(),
+    username: location.state.nickname,
     color: randomColor(),
   });
+
+  // Auto scroll on new messages
+  const messagesEndRef = useRef(null);
+  useEffect(() => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   useEffect(() => {
     // Connecting to Scaledrone
@@ -61,6 +62,7 @@ export default function ChatUI() {
       <div className="top-UI">ChatApp</div>
       <div className="messages-UI">
         <Messages messages={messages} currentMember={member} />
+        <div ref={messagesEndRef} />{" "}
       </div>
       <div className="input-UI">
         <Input handleSendMessage={handleSendMessage} />

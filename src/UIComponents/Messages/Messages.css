@@ -2,6 +2,7 @@
   text-align: end;
   margin-right: 0.8rem;
   list-style-type: none;
+  margin-bottom: 0.5rem;
 }
 .main-member span {
   color: orange !important;
@@ -9,13 +10,14 @@
   font-size: 0.8rem;
   font-style: italic;
 }
-
 .other-member {
   text-align: start;
   margin-left: 0.8rem;
   list-style-type: none;
+  margin-bottom: 0.5rem;
 }
 .other-member span {
+  font-weight: bold;
   font-size: 0.8rem;
   font-style: italic;
 }
