@@ -7,7 +7,6 @@ import "./MainLogIn.css";
 export default function MainLogin() {
   // useState for getting nickname from the input
   const [nickname, setNickname] = useState("");
-
   const handleNickname = (e) => {
     setNickname(e.target.value);
   };

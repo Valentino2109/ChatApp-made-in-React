@@ -28,8 +28,8 @@ export default function ChatUI() {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // Connecting to Scaledrone
   useEffect(() => {
-    // Connecting to Scaledrone
     const drone = new window.Scaledrone("fbEWYCxtwTPuUsqf", {
       data: member,
     });
