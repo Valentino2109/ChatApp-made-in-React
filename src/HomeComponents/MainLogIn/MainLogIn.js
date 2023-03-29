@@ -17,6 +17,7 @@ export default function MainLogin() {
     if (nickname.trim() === "") {
       return alert("Please enter your name!");
     }
+    // Open chatui page and set nickname from input
     return navigate("/chatui", {
       state: {
         nickname,

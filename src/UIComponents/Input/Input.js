@@ -6,6 +6,7 @@ import "./Input.css";
 export default function Input({ handleSendMessage }) {
   const [text, setText] = useState("");
 
+  // If enter has been pressed, save a message in "text"
   const handleEnter = (e) => {
     if (e.key === "Enter") {
       handleButtonSend();
@@ -16,7 +17,7 @@ export default function Input({ handleSendMessage }) {
     setText(e.target.value);
   };
 
-  const handleButtonSend = (e) => {
+  const handleButtonSend = () => {
     if (!text.length > 0) {
       return;
     }
@@ -31,10 +32,10 @@ export default function Input({ handleSendMessage }) {
         value={text}
         type="text"
         placeholder="Message..."
-        onKeyUp={(e) => handleEnter(e)}
-        onChange={(e) => handleInputChange(e)}
+        onKeyUp={handleEnter}
+        onChange={handleInputChange}
       />
-      <button className="chat-button" onClick={(e) => handleButtonSend(e)}>
+      <button className="chat-button" onClick={handleButtonSend}>
         SEND
       </button>
     </div>

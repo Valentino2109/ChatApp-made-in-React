@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 // CSS
 import "./ChatUI.css";
 
-// Random color for a member
+// Random color for a member using hexadecimal numbers toString(16)
 const randomColor = () => {
   return "#" + Math.floor(Math.random() * 0xffffff).toString(16);
 };
@@ -49,7 +49,7 @@ export default function ChatUI() {
     setDrone(drone);
   }, []);
 
-  // Sending a message through observable-room
+  // Sending a message through observable-room - Scaledrone
   const handleSendMessage = (message) => {
     drone.publish({
       room: "observable-chat",
